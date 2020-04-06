@@ -23,6 +23,9 @@ The Launch Helpers package has been tested under [ROS2] Eloquent and Ubuntu 18.0
 #### Dependencies
 
 - [Robot Operating System (ROS)](http://wiki.ros.org) (middleware for robotics),
+- [Xacro](http://wiki.ros.org/xacro) (XML Markup language simplyfing URDF robot model definition.).
+
+		sudo apt-get install ros-eloquent-xacro
 
 #### Building
 
