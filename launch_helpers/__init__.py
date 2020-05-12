@@ -13,6 +13,10 @@ def add_namespace_to_yaml(namespace, yaml_path, ns_yaml_path=None):
     * yaml_path -- the path to the yaml file
     * ns_yaml_path -- the path to the namespaced yaml file
     """
+    # If no namespace is given return original path
+    if namespace is '':
+        return yaml_path
+
     # If no YAML path is given, use a temporary file
     if ns_yaml_path is None:
         ns_yaml_path = tempfile.mktemp(prefix="%s_" %
