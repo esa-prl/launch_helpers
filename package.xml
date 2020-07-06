@@ -7,8 +7,9 @@
   <maintainer email="miro.voellmy@esa.int">Miro Voellmy</maintainer>
   <license>TODO: License declaration</license>
 
-  <exec_depend>xacro</exec_depend>
+  <depend>xacro</depend>
 
+  <test_depend>xacro</test_depend>
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>
   <test_depend>ament_pep257</test_depend>
