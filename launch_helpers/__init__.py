@@ -8,6 +8,7 @@ from ament_index_python.packages import get_package_prefix
 
 import xacro
 
+import launch.substitutions
 
 def add_namespace_to_yaml(namespace, yaml_path, ns_yaml_path=None):
     """Make config files reusable in multiple namespaces by generating a new yaml with a namespace appended.
@@ -50,7 +51,10 @@ def to_urdf(xacro_path, urdf_path=None, mappings={}):
     out = xacro.open_output(urdf_path)
     out.write(doc.toprettyxml(indent='  '))
 
-    return urdf_path  # Return path to the urdf file
+    robot_desc = launch.substitutions.Command('xacro %s' % xacro_path)
+
+    return urdf_path, robot_desc  # Return robot description
+    # return urdf_path  # Return path to the urdf file
 
 
 def get_ws_src_directory(package_name):
